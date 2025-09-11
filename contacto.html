@@ -487,16 +487,19 @@
                 correoField.addEventListener('blur', function() {
                     const value = this.value.toLowerCase();
                     const suspiciousDomains = ['tempmail.com', '10minutemail.com', 'guerrillamail.com'];
-                    const validDomains = ['@duoc.cl', '@profesor.duoc.cl', '@gmail.com'];
+                    const validDomains = ['duoc.cl', 'profesor.duoc.cl', 'gmail.com'];
                     
                     if (suspiciousDomains.some(domain => value.includes(domain))) {
                         const errorElement = document.getElementById('correoError');
                         errorElement.textContent = 'Por favor, usa un correo electrónico válido y permanente';
                         errorElement.classList.remove('hidden');
-                    } else if (value && !validDomains.some(domain => value.includes(domain))) {
-                        const errorElement = document.getElementById('correoError');
-                        errorElement.textContent = 'El correo debe ser de @duoc.cl, @profesor.duoc.cl o @gmail.com';
-                        errorElement.classList.remove('hidden');
+                    } else if (value && value.includes('@')) {
+                        const domain = value.split('@')[1];
+                        if (!validDomains.includes(domain)) {
+                            const errorElement = document.getElementById('correoError');
+                            errorElement.textContent = 'El correo debe ser de @duoc.cl, @profesor.duoc.cl o @gmail.com';
+                            errorElement.classList.remove('hidden');
+                        }
                     }
                 });
 

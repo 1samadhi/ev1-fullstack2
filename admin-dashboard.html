@@ -323,8 +323,8 @@
     <script src="js/auth.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Proteger la página para que solo accedan administradores
-            const rolesPermitidos = [Auth.ROLES.ADMIN];
+            // Proteger la página para que solo accedan administradores y vendedores
+            const rolesPermitidos = [Auth.ROLES.ADMIN, Auth.ROLES.VENDEDOR];
             Auth.protegerPagina(rolesPermitidos);
             
             // Botón de cierre de sesión

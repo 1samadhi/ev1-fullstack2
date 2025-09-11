@@ -292,8 +292,8 @@
         }
     </script>
     <script>
-        // Proteger la página para que solo los clientes puedan acceder
-        Auth.protegerPagina([Auth.ROLES.CLIENTE]);
+        // Página accesible para todos los usuarios autenticados
+        // Auth.protegerPagina([Auth.ROLES.CLIENTE]); // Comentado para permitir acceso a vendedores y admins
         
         // Obtener el usuario actual
         const usuarioActual = Auth.obtenerUsuarioActual();

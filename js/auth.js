@@ -42,7 +42,7 @@ const USUARIOS = [
         nombre: 'Vendedor',
         apellidos: 'Prueba',
         correo: 'vendedor@duoc.cl',
-        password: 'vendedor123',
+        password: 'vend123',
         fechaNacimiento: '1995-05-15',
         tipoUsuario: ROLES.VENDEDOR,
         region: 'Metropolitana',

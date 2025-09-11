@@ -304,8 +304,9 @@
         }
 
         function isValidEmailDomain(email) {
-            const validDomains = ['@duoc.cl', '@profesor.duoc.cl', '@gmail.com'];
-            return validDomains.some(domain => email.includes(domain));
+            const validDomains = ['duoc.cl', 'profesor.duoc.cl', 'gmail.com'];
+            const domain = email.split('@')[1];
+            return validDomains.includes(domain);
         }
 
         function showError(elementId, message) {

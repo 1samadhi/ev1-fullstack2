@@ -15,7 +15,7 @@
             <div class="flex justify-between items-center py-4">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <div class="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
                         <i class="fas fa-store text-white text-xl"></i>
                     </div>
                     <span class="ml-3 text-2xl font-bold text-gray-800">Tienda Online</span>
@@ -23,17 +23,17 @@
 
                 <!-- Navigation -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
-                    <a href="productos.html" class="text-blue-600 font-medium">Productos</a>
-                    <a href="nosotros.html" class="text-gray-700 hover:text-blue-600 font-medium">Nosotros</a>
-                    <a href="blogs.html" class="text-gray-700 hover:text-blue-600 font-medium">Blogs</a>
-                    <a href="contacto.html" class="text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
+                    <a href="index.html" class="text-gray-700 hover:text-orange-600 font-medium">Home</a>
+                    <a href="productos.html" class="text-orange-600 font-medium">Productos</a>
+                    <a href="nosotros.html" class="text-gray-700 hover:text-orange-600 font-medium">Nosotros</a>
+                    <a href="blogs.html" class="text-gray-700 hover:text-orange-600 font-medium">Blogs</a>
+                    <a href="contacto.html" class="text-gray-700 hover:text-orange-600 font-medium">Contacto</a>
                 </nav>
 
                 <!-- Cart and Auth -->
                 <div class="flex items-center space-x-4">
                     <!-- Cart -->
-                    <div class="flex items-center text-gray-700 hover:text-blue-600 cursor-pointer relative" onclick="toggleCart()">
+                    <div class="flex items-center text-gray-700 hover:text-orange-600 cursor-pointer relative" onclick="toggleCart()">
                         <i class="fas fa-shopping-cart text-xl"></i>
                         <span class="ml-2 font-medium">Cart (<span id="cartCount">0</span>)</span>
                         <!-- Cart Badge -->
@@ -42,15 +42,15 @@
                     
                     <!-- Auth Links -->
                     <div class="hidden md:flex items-center space-x-4 text-sm">
-                        <a href="login.html" class="text-gray-700 hover:text-blue-600">Iniciar sesión</a>
+                        <a href="login.html" class="text-gray-700 hover:text-orange-600">Iniciar sesión</a>
                         <span class="text-gray-300">|</span>
-                        <a href="registro.html" class="text-gray-700 hover:text-blue-600">Registrar usuario</a>
+                        <a href="registro.html" class="text-gray-700 hover:text-orange-600">Registrar usuario</a>
                     </div>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button class="text-gray-700 hover:text-blue-600">
+                    <button class="text-gray-700 hover:text-orange-600">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -81,9 +81,9 @@
             <div class="border-t p-6">
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-lg font-semibold">Total:</span>
-                    <span id="cartTotal" class="text-xl font-bold text-blue-600">$0</span>
+                    <span id="cartTotal" class="text-xl font-bold text-orange-600">$0</span>
                 </div>
-                <button onclick="checkout()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                <button onclick="checkout()" class="w-full bg-orange-600 text-white py-3 rounded-lg font-medium hover:bg-orange-700 transition-colors">
                     Proceder al Pago
                 </button>
             </div>
@@ -99,9 +99,9 @@
             <!-- Breadcrumb -->
             <nav class="mb-8">
                 <ol class="flex items-center space-x-2 text-sm text-gray-500">
-                    <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
+                    <li><a href="index.html" class="hover:text-orange-600">Home</a></li>
                     <li><i class="fas fa-chevron-right text-xs"></i></li>
-                    <li><a href="productos.html" class="hover:text-blue-600">Productos</a></li>
+                    <li><a href="productos.html" class="hover:text-orange-600">Productos</a></li>
                     <li><i class="fas fa-chevron-right text-xs"></i></li>
                     <li class="text-gray-900" id="breadcrumbProductName">Detalle del Producto</li>
                 </ol>
@@ -116,10 +116,10 @@
                     </div>
                     <!-- Thumbnail images (placeholder) -->
                     <div class="grid grid-cols-4 gap-4">
-                        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-blue-500">
+                        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-orange-500">
                             <i class="fas fa-image text-2xl text-gray-400"></i>
                         </div>
-                        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-blue-500">
+                        <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-orange-500">
                             <i class="fas fa-image text-2xl text-gray-400"></i>
                         </div>
                         <div class="aspect-square bg-gray-200 rounded-lg flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-blue-500">
@@ -147,7 +147,7 @@
                                 <span class="ml-2 text-gray-600">(4.8) 124 reseñas</span>
                             </div>
                         </div>
-                        <p id="productPrice" class="text-3xl font-bold text-blue-600 mb-6">$0.00</p>
+                        <p id="productPrice" class="text-3xl font-bold text-orange-600 mb-6">$0.00</p>
                     </div>
 
                     <!-- Product Description -->
@@ -185,7 +185,7 @@
                         </div>
 
                         <div class="flex space-x-4">
-                            <button onclick="addToCartFromDetail()" class="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                            <button onclick="addToCartFromDetail()" class="flex-1 bg-orange-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-orange-700 transition-colors">
                                 <i class="fas fa-shopping-cart mr-2"></i>
                                 Añadir al Carrito
                             </button>
@@ -200,7 +200,7 @@
                     <div class="border-t pt-6">
                         <div class="border-b border-gray-200">
                             <nav class="-mb-px flex space-x-8">
-                                <button onclick="showTab('details')" class="tab-button py-2 px-1 border-b-2 border-blue-500 text-blue-600 font-medium text-sm">
+                                <button onclick="showTab('details')" class="tab-button py-2 px-1 border-b-2 border-orange-500 text-orange-600 font-medium text-sm">
                                     Detalles
                                 </button>
                                 <button onclick="showTab('specifications')" class="tab-button py-2 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium text-sm">
@@ -290,7 +290,7 @@
                             <i class="fas fa-image text-4xl text-gray-400"></i>
                         </div>
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(1)">Producto Relacionado 1</h3>
+                            <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(1)">Producto Relacionado 1</h3>
                             <p class="text-xl font-bold text-gray-900 mb-4">$9.999.999.999</p>
                             <button onclick="addToCart(1, 'Producto Relacionado 1', 29.99)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
                                 Añadir
@@ -304,7 +304,7 @@
                             <i class="fas fa-image text-4xl text-gray-400"></i>
                         </div>
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(2)">Producto Relacionado 2</h3>
+                            <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(2)">Producto Relacionado 2</h3>
                             <p class="text-xl font-bold text-gray-900 mb-4">$39.990</p>
                             <button onclick="addToCart(2, 'Producto Relacionado 2', 39.99)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
                                 Añadir
@@ -318,7 +318,7 @@
                             <i class="fas fa-image text-4xl text-gray-400"></i>
                         </div>
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(3)">Producto Relacionado 3</h3>
+                            <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(3)">Producto Relacionado 3</h3>
                             <p class="text-xl font-bold text-gray-900 mb-4">$49.990</p>
                             <button onclick="addToCart(3, 'Producto Relacionado 3', 49.99)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
                                 Añadir
@@ -332,7 +332,7 @@
                             <i class="fas fa-image text-4xl text-gray-400"></i>
                         </div>
                         <div class="p-4">
-                            <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(4)">Producto Relacionado 4</h3>
+                            <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(4)">Producto Relacionado 4</h3>
                             <p class="text-xl font-bold text-gray-900 mb-4">$59.990</p>
                             <button onclick="addToCart(4, 'Producto Relacionado 4', 59.99)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
                                 Añadir
@@ -351,23 +351,23 @@
                 <!-- Left Side -->
                 <div>
                     <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <div class="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
                             <i class="fas fa-store text-white text-xl"></i>
                         </div>
                         <span class="ml-3 text-2xl font-bold">Tienda Online</span>
                     </div>
                     
                     <div class="space-y-2">
-                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría X</a>
-                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría Y</a>
-                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría Z</a>
+                        <a href="#" class="block text-orange-400 hover:text-orange-300">Categoría X</a>
+                <a href="#" class="block text-orange-400 hover:text-orange-300">Categoría Y</a>
+                <a href="#" class="block text-orange-400 hover:text-orange-300">Categoría Z</a>
                     </div>
                     
                     <!-- Payment Methods -->
                     <div class="mt-6">
                         <div class="flex space-x-4">
                             <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
-                                <span class="text-xs font-bold text-blue-600">VISA</span>
+                                <span class="text-xs font-bold text-orange-600">VISA</span>
                             </div>
                             <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
                                 <span class="text-xs font-bold text-red-600">MC</span>
@@ -391,11 +391,11 @@
                         <input 
                             type="email" 
                             placeholder="Ingresa tu email" 
-                            class="flex-1 px-4 py-2 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            class="flex-1 px-4 py-2 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500"
                         >
                         <button 
                             type="submit" 
-                            class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                            class="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors font-medium"
                         >
                             Suscribirse
                         </button>
@@ -413,14 +413,14 @@
     <!-- Mobile Navigation (Hidden by default) -->
     <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
         <div class="px-4 py-2 space-y-2">
-            <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
-            <a href="productos.html" class="block py-2 text-blue-600 font-medium">Productos</a>
-            <a href="nosotros.html" class="block py-2 text-gray-700 hover:text-blue-600">Nosotros</a>
-            <a href="blogs.html" class="block py-2 text-gray-700 hover:text-blue-600">Blogs</a>
-            <a href="contacto.html" class="block py-2 text-gray-700 hover:text-blue-600">Contacto</a>
+            <a href="index.html" class="block py-2 text-gray-700 hover:text-orange-600">Home</a>
+                <a href="productos.html" class="block py-2 text-orange-600 font-medium">Productos</a>
+                <a href="nosotros.html" class="block py-2 text-gray-700 hover:text-orange-600">Nosotros</a>
+                <a href="blogs.html" class="block py-2 text-gray-700 hover:text-orange-600">Blogs</a>
+                <a href="contacto.html" class="block py-2 text-gray-700 hover:text-orange-600">Contacto</a>
             <div class="border-t pt-2">
-                <a href="login.html" class="block py-2 text-gray-700 hover:text-blue-600">Iniciar sesión</a>
-                <a href="registro.html" class="block py-2 text-gray-700 hover:text-blue-600">Registrar usuario</a>
+                <a href="login.html" class="block py-2 text-gray-700 hover:text-orange-600">Iniciar sesión</a>
+                <a href="registro.html" class="block py-2 text-gray-700 hover:text-orange-600">Registrar usuario</a>
             </div>
         </div>
     </div>
@@ -576,7 +576,7 @@
             
             // Remove active class from all buttons
             document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('border-blue-500', 'text-blue-600');
+                button.classList.remove('border-orange-500', 'text-orange-600');
                 button.classList.add('border-transparent', 'text-gray-500');
             });
             
@@ -585,7 +585,7 @@
             
             // Add active class to clicked button
             event.target.classList.remove('border-transparent', 'text-gray-500');
-            event.target.classList.add('border-blue-500', 'text-blue-600');
+            event.target.classList.add('border-orange-500', 'text-orange-600');
         }
 
         // Shopping cart functions (same as productos.html)
@@ -719,7 +719,7 @@
             notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
                 type === 'success' ? 'bg-green-500 text-white' :
                 type === 'error' ? 'bg-red-500 text-white' :
-                'bg-blue-500 text-white'
+                'bg-orange-500 text-white'
             }`;
             notification.textContent = message;
             
@@ -731,8 +731,8 @@
         }
     </script>
     <script>
-        // Proteger la página para que solo los clientes puedan acceder
-        Auth.protegerPagina([Auth.ROLES.CLIENTE]);
+        // Página accesible para todos los usuarios autenticados
+        // Auth.protegerPagina([Auth.ROLES.CLIENTE]); // Comentado para permitir acceso a vendedores y admins
         
         // Obtener el usuario actual
         const usuarioActual = Auth.obtenerUsuarioActual();
@@ -746,7 +746,7 @@
                 authLinks.innerHTML = `
                     <span class="text-gray-700">Hola, ${usuarioActual.nombre}</span>
                     <span class="text-gray-300">|</span>
-                    <a href="#" id="btnLogout" class="text-gray-700 hover:text-blue-600">Cerrar sesión</a>
+                    <a href="#" id="btnLogout" class="text-gray-700 hover:text-orange-600">Cerrar sesión</a>
                 `;
                 
                 // Agregar evento de cierre de sesión
