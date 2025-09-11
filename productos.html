@@ -15,7 +15,7 @@
             <div class="flex justify-between items-center py-4">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <div class="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
                         <i class="fas fa-store text-white text-xl"></i>
                     </div>
                     <span class="ml-3 text-2xl font-bold text-gray-800">Tienda Online</span>
@@ -23,17 +23,17 @@
 
                 <!-- Navigation -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
-                    <a href="productos.html" class="text-blue-600 font-medium">Productos</a>
-                    <a href="nosotros.html" class="text-gray-700 hover:text-blue-600 font-medium">Nosotros</a>
-                    <a href="blogs.html" class="text-gray-700 hover:text-blue-600 font-medium">Blogs</a>
-                    <a href="contacto.html" class="text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
+                    <a href="index.html" class="text-gray-700 hover:text-orange-600 font-medium">Home</a>
+                <a href="productos.html" class="text-orange-600 font-medium">Productos</a>
+                <a href="nosotros.html" class="text-gray-700 hover:text-orange-600 font-medium">Nosotros</a>
+                <a href="blogs.html" class="text-gray-700 hover:text-orange-600 font-medium">Blogs</a>
+                <a href="contacto.html" class="text-gray-700 hover:text-orange-600 font-medium">Contacto</a>
                 </nav>
 
                 <!-- Cart and Auth -->
                 <div class="flex items-center space-x-4">
                     <!-- Cart -->
-                    <div class="flex items-center text-gray-700 hover:text-blue-600 cursor-pointer relative" onclick="toggleCart()">
+                    <div class="flex items-center text-gray-700 hover:text-orange-600 cursor-pointer relative" onclick="toggleCart()">
                         <i class="fas fa-shopping-cart text-xl"></i>
                         <span class="ml-2 font-medium">Cart (<span id="cartCount">0</span>)</span>
                         <!-- Cart Badge -->
@@ -42,15 +42,15 @@
                     
                     <!-- Auth Links -->
                     <div class="hidden md:flex items-center space-x-4 text-sm">
-                        <a href="login.html" class="text-gray-700 hover:text-blue-600">Iniciar sesión</a>
-                        <span class="text-gray-300">|</span>
-                        <a href="registro.html" class="text-gray-700 hover:text-blue-600">Registrar usuario</a>
+                        <a href="login.html" class="text-gray-700 hover:text-orange-600">Iniciar sesión</a>
+                <span class="mx-2 text-gray-400">|</span>
+                <a href="registro.html" class="text-gray-700 hover:text-orange-600">Registrar usuario</a>
                     </div>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button class="text-gray-700 hover:text-blue-600">
+                    <button class="text-gray-700 hover:text-orange-600">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -110,10 +110,10 @@
                         <img src="https://picsum.photos/300/256?random=1" alt="Producto 1" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(1)">Producto 1</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(1)">Producto 1</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$29.990</p>
-                        <button onclick="addToCart(1, 'Producto 1', 29.990)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
-                            Añadir
+                        <button onclick="addToCart(1, 'Producto 1', 29.990)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
+                            Añadir al carrito
                         </button>
                     </div>
                 </div>
@@ -124,9 +124,9 @@
                         <img src="https://picsum.photos/300/256?random=2" alt="Producto 2" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(2)">Producto 2</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(2)">Producto 2</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$39.990</p>
-                        <button onclick="addToCart(2, 'Producto 2', 39.990)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
+                        <button onclick="addToCart(2, 'Producto 2', 39.990)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
                             Añadir
                         </button>
                     </div>
@@ -138,9 +138,9 @@
                         <img src="https://picsum.photos/300/256?random=3" alt="Producto 3" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(3)">Producto 3</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(3)">Producto 3</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$49.990</p>
-                        <button onclick="addToCart(3, 'Producto 3', 49.990)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
+                        <button onclick="addToCart(3, 'Producto 3', 49.990)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
                             Añadir
                         </button>
                     </div>
@@ -152,9 +152,9 @@
                         <img src="https://picsum.photos/300/256?random=4" alt="Producto 4" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(4)">Producto 4</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(4)">Producto 4</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$59.990</p>
-                        <button onclick="addToCart(4, 'Producto 4', 59.990)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
+                        <button onclick="addToCart(4, 'Producto 4', 59.990)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
                             Añadir
                         </button>
                     </div>
@@ -166,9 +166,9 @@
                         <img src="https://picsum.photos/300/256?random=5" alt="Producto 5" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(5)">Producto 5</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(5)">Producto 5</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$69.990</p>
-                        <button onclick="addToCart(5, 'Producto 5', 69.990)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
+                        <button onclick="addToCart(5, 'Producto 5', 69.990)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
                             Añadir
                         </button>
                     </div>
@@ -180,9 +180,9 @@
                         <img src="https://picsum.photos/300/256?random=6" alt="Producto 6" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(6)">Producto 6</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(6)">Producto 6</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$79.990</p>
-                        <button onclick="addToCart(6, 'Producto 6', 79.990)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
+                        <button onclick="addToCart(6, 'Producto 6', 79.990)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
                             Añadir
                         </button>
                     </div>
@@ -194,9 +194,9 @@
                         <img src="https://picsum.photos/300/256?random=7" alt="Producto 7" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(7)">Producto 7</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(7)">Producto 7</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$89.990</p>
-                        <button onclick="addToCart(7, 'Producto 7', 89.990)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
+                        <button onclick="addToCart(7, 'Producto 7', 89.990)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
                             Añadir
                         </button>
                     </div>
@@ -208,9 +208,9 @@
                         <img src="https://picsum.photos/300/256?random=8" alt="Producto 8" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(8)">Producto 8</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(8)">Producto 8</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$99.99</p>
-                        <button onclick="addToCart(8, 'Producto 8', 99.99)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
+                        <button onclick="addToCart(8, 'Producto 8', 99.99)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
                             Añadir
                         </button>
                     </div>
@@ -222,9 +222,9 @@
                         <img src="https://picsum.photos/300/256?random=9" alt="Producto 9" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(9)">Producto 9</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(9)">Producto 9</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$109.99</p>
-                        <button onclick="addToCart(9, 'Producto 9', 109.99)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
+                        <button onclick="addToCart(9, 'Producto 9', 109.99)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
                             Añadir
                         </button>
                     </div>
@@ -236,9 +236,9 @@
                         <img src="https://picsum.photos/300/256?random=10" alt="Producto 10" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(10)">Producto 10</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(10)">Producto 10</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$119.99</p>
-                        <button onclick="addToCart(10, 'Producto 10', 119.99)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
+                        <button onclick="addToCart(10, 'Producto 10', 119.99)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
                             Añadir
                         </button>
                     </div>
@@ -250,9 +250,9 @@
                         <img src="https://picsum.photos/300/256?random=11" alt="Producto 11" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(11)">Producto 11</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(11)">Producto 11</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$129.99</p>
-                        <button onclick="addToCart(11, 'Producto 11', 129.99)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
+                        <button onclick="addToCart(11, 'Producto 11', 129.99)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
                             Añadir
                         </button>
                     </div>
@@ -264,9 +264,9 @@
                         <img src="https://picsum.photos/300/256?random=12" alt="Producto 12" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer mb-2" onclick="viewProduct(12)">Producto 12</h3>
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer mb-2" onclick="viewProduct(12)">Producto 12</h3>
                         <p class="text-xl font-bold text-gray-900 mb-4">$139.99</p>
-                        <button onclick="addToCart(12, 'Producto 12', 139.99)" class="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-50 transition-colors">
+                        <button onclick="addToCart(12, 'Producto 12', 139.99)" class="w-full bg-orange-600 text-white py-2 px-4 rounded hover:bg-orange-700 transition-colors">
                             Añadir
                         </button>
                     </div>
@@ -289,9 +289,9 @@
                     </div>
                     
                     <div class="space-y-2">
-                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría X</a>
-                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría Y</a>
-                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría Z</a>
+                        <a href="#" class="block text-orange-400 hover:text-orange-300">Categoría X</a>
+                        <a href="#" class="block text-orange-400 hover:text-orange-300">Categoría Y</a>
+                        <a href="#" class="block text-orange-400 hover:text-orange-300">Categoría Z</a>
                     </div>
                     
                     <!-- Payment Methods -->
