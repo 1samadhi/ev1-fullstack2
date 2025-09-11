@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Tienda Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-store text-white text-xl"></i>
+                    </div>
+                    <span class="ml-3 text-2xl font-bold text-gray-800">Tienda Online</span>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                    <a href="productos.html" class="text-gray-700 hover:text-blue-600 font-medium">Productos</a>
+                    <a href="nosotros.html" class="text-blue-600 font-medium">Nosotros</a>
+                    <a href="blogs.html" class="text-gray-700 hover:text-blue-600 font-medium">Blogs</a>
+                    <a href="contacto.html" class="text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
+                </nav>
+
+                <!-- Cart and Auth -->
+                <div class="flex items-center space-x-4">
+                    <!-- Cart -->
+                    <div class="flex items-center text-gray-700 hover:text-blue-600 cursor-pointer">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="ml-2 font-medium">Cart (0)</span>
+                    </div>
+                    
+                    <!-- Auth Links -->
+                    <div class="hidden md:flex items-center space-x-4 text-sm">
+                        <a href="login.html" class="text-gray-700 hover:text-blue-600">Iniciar sesión</a>
+                        <span class="text-gray-300">|</span>
+                        <a href="registro.html" class="text-gray-700 hover:text-blue-600">Registrar usuario</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Hero Section -->
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Sobre Nosotros</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Conoce más sobre nuestra empresa, nuestra misión y el equipo de desarrolladores que hace posible esta experiencia de compra única.
+                </p>
+            </div>
+
+            <!-- Company Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Nuestra Empresa</h2>
+                    <div class="space-y-4 text-gray-600">
+                        <p>
+                            <strong>Tienda Online</strong> es una plataforma de comercio electrónico innovadora que nació con la visión de revolucionar la experiencia de compra online en Chile. Fundada en 2024, nuestra empresa se ha consolidado como un referente en el mercado digital nacional.
+                        </p>
+                        <p>
+                            Nos especializamos en ofrecer productos de alta calidad con un enfoque en la satisfacción del cliente y la tecnología de vanguardia. Nuestra plataforma combina una interfaz intuitiva con un sistema robusto de gestión de inventarios y pedidos.
+                        </p>
+                        <p>
+                            Creemos en la importancia de la sostenibilidad y el comercio justo, por lo que trabajamos únicamente con proveedores que comparten nuestros valores de responsabilidad social y ambiental.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="w-full h-96 bg-gray-200 rounded-lg flex items-center justify-center">
+                        <div class="text-center text-gray-500">
+                            <i class="fas fa-building text-6xl mb-4"></i>
+                            <p class="text-lg">Imagen de la empresa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission, Vision, Values -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div class="text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bullseye text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Misión</h3>
+                    <p class="text-gray-600">
+                        Facilitar el acceso a productos de calidad a través de una plataforma digital intuitiva, segura y eficiente, mejorando la experiencia de compra de nuestros clientes.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-eye text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Visión</h3>
+                    <p class="text-gray-600">
+                        Ser la plataforma de e-commerce líder en Chile, reconocida por nuestra innovación tecnológica y compromiso con la excelencia en el servicio al cliente.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6 bg-white rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Valores</h3>
+                    <p class="text-gray-600">
+                        Integridad, innovación, responsabilidad social y compromiso con la satisfacción del cliente son los pilares que guían cada decisión en nuestra empresa.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Development Team Section -->
+            <div class="mb-20">
+                <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Nuestro Equipo de Desarrollo</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Developer 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-64 bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-user text-6xl text-gray-400"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">María González</h3>
+                            <p class="text-blue-600 font-medium mb-2">Desarrolladora Frontend</p>
+                            <p class="text-gray-600 text-sm">
+                                Especialista en React, Vue.js y diseño de interfaces de usuario. Con más de 5 años de experiencia en desarrollo web.
+                            </p>
+                            <div class="flex space-x-2 mt-4">
+                                <a href="#" class="text-blue-600 hover:text-blue-800">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-gray-800">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Developer 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-64 bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-user text-6xl text-gray-400"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Carlos Rodríguez</h3>
+                            <p class="text-green-600 font-medium mb-2">Desarrollador Backend</p>
+                            <p class="text-gray-600 text-sm">
+                                Experto en Node.js, Python y arquitectura de microservicios. Responsable de la infraestructura y APIs de la plataforma.
+                            </p>
+                            <div class="flex space-x-2 mt-4">
+                                <a href="#" class="text-blue-600 hover:text-blue-800">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-gray-800">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Developer 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-64 bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-user text-6xl text-gray-400"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Ana Martínez</h3>
+                            <p class="text-purple-600 font-medium mb-2">Diseñadora UX/UI</p>
+                            <p class="text-gray-600 text-sm">
+                                Especialista en experiencia de usuario y diseño de interfaces. Encargada de crear experiencias intuitivas y atractivas.
+                            </p>
+                            <div class="flex space-x-2 mt-4">
+                                <a href="#" class="text-blue-600 hover:text-blue-800">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-gray-800">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h2 class="text-3xl font-bold text-gray-900 text-center mb-8">Tecnologías que Utilizamos</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <i class="fab fa-html5 text-orange-600 text-2xl"></i>
+                        </div>
+                        <p class="text-sm font-medium text-gray-700">HTML5</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <i class="fab fa-css3-alt text-blue-600 text-2xl"></i>
+                        </div>
+                        <p class="text-sm font-medium text-gray-700">CSS3</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <i class="fab fa-js-square text-yellow-600 text-2xl"></i>
+                        </div>
+                        <p class="text-sm font-medium text-gray-700">JavaScript</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <i class="fab fa-tailwind-css text-cyan-600 text-2xl"></i>
+                        </div>
+                        <p class="text-sm font-medium text-gray-700">Tailwind</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <i class="fab fa-node-js text-green-600 text-2xl"></i>
+                        </div>
+                        <p class="text-sm font-medium text-gray-700">Node.js</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mx-auto mb-2">
+                            <i class="fab fa-react text-indigo-600 text-2xl"></i>
+                        </div>
+                        <p class="text-sm font-medium text-gray-700">React</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left Side -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-store text-white text-xl"></i>
+                        </div>
+                        <span class="ml-3 text-2xl font-bold">Tienda Online</span>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría X</a>
+                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría Y</a>
+                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría Z</a>
+                    </div>
+                    
+                    <!-- Payment Methods -->
+                    <div class="mt-6">
+                        <div class="flex space-x-4">
+                            <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
+                                <span class="text-xs font-bold text-blue-600">VISA</span>
+                            </div>
+                            <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
+                                <span class="text-xs font-bold text-red-600">MC</span>
+                            </div>
+                            <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
+                                <span class="text-xs font-bold text-green-600">AMEX</span>
+                            </div>
+                            <div class="w-12 h-8 bg-gray-300 rounded flex items-center justify-center">
+                                <i class="fas fa-credit-card text-gray-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">¡Mantente en contacto!</h3>
+                    <p class="text-gray-300 mb-4">Únete a nuestro boletín de noticias.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-2">
+                        <input 
+                            type="email" 
+                            placeholder="Ingresa tu email" 
+                            class="flex-1 px-4 py-2 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                        <button 
+                            type="submit" 
+                            class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                        >
+                            Suscribirse
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Bottom Border -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Tienda Online. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation (Hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+        <div class="px-4 py-2 space-y-2">
+            <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+            <a href="productos.html" class="block py-2 text-gray-700 hover:text-blue-600">Productos</a>
+            <a href="nosotros.html" class="block py-2 text-blue-600 font-medium">Nosotros</a>
+            <a href="blogs.html" class="block py-2 text-gray-700 hover:text-blue-600">Blogs</a>
+            <a href="contacto.html" class="block py-2 text-gray-700 hover:text-blue-600">Contacto</a>
+            <div class="border-t pt-2">
+                <a href="login.html" class="block py-2 text-gray-700 hover:text-blue-600">Iniciar sesión</a>
+                <a href="registro.html" class="block py-2 text-gray-700 hover:text-blue-600">Registrar usuario</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

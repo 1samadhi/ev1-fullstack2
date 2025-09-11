@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrador - Tienda Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-gray-800 text-white flex flex-col">
+            <!-- Logo -->
+            <div class="flex items-center p-6 border-b border-gray-700">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-store text-white"></i>
+                </div>
+                <span class="text-xl font-bold">Company</span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="flex-1 p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="admin-dashboard.html" class="flex items-center p-3 rounded-lg bg-blue-600 text-white">
+                            <i class="fas fa-th-large mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-orders.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-clipboard-list mr-3"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-products.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-warehouse mr-3"></i>
+                            Inventory
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-reports.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-employees.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-user mr-3"></i>
+                            Employees
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-users.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Utility Links -->
+                <div class="border-t border-gray-700 mt-6 pt-4">
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="admin-settings.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                                <i class="fas fa-cog mr-3"></i>
+                                Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a href="admin-profile.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                                <i class="fas fa-user-plus mr-3"></i>
+                                +Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                                <i class="fas fa-search mr-3"></i>
+                                Search
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                                <i class="fas fa-question-circle mr-3"></i>
+                                Help
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Profile Link -->
+                <div class="border-t border-gray-700 mt-4 pt-4">
+                    <a href="admin-profile.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <i class="fas fa-user mr-3"></i>
+                        Profile
+                    </a>
+                    <a href="#" id="logout-btn" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <i class="fas fa-sign-out-alt mr-3"></i>
+                        Cerrar Sesión
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Bar -->
+            <header class="bg-white shadow-sm border-b border-gray-200">
+                <div class="flex items-center justify-between px-6 py-4">
+                    <h1 class="text-2xl font-bold text-gray-900">¡HOLA Administrador!</h1>
+                    <div class="flex items-center space-x-4">
+                        <button class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-bell text-xl"></i>
+                        </button>
+                        <div class="flex items-center space-x-2">
+                            <img src="https://via.placeholder.com/40x40" alt="Profile" class="w-10 h-10 rounded-full">
+                            <span class="text-gray-700 font-medium">Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 overflow-y-auto bg-gray-50 p-6">
+                <!-- Dashboard Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Total Sales -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                                <i class="fas fa-dollar-sign text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Ventas Totales</p>
+                                <p class="text-2xl font-bold text-gray-900">$125,430</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Orders -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-green-100 text-green-600">
+                                <i class="fas fa-shopping-cart text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Pedidos</p>
+                                <p class="text-2xl font-bold text-gray-900">1,234</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Products -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                                <i class="fas fa-box text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Productos</p>
+                                <p class="text-2xl font-bold text-gray-900">156</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Customers -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                                <i class="fas fa-users text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Clientes</p>
+                                <p class="text-2xl font-bold text-gray-900">892</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Recent Orders -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold text-gray-900">Pedidos Recientes</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-shopping-cart text-blue-600"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-900">Pedido #1234</p>
+                                            <p class="text-sm text-gray-500">Cliente: Juan Pérez</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-green-600 font-medium">$299.99</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-shopping-cart text-green-600"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-900">Pedido #1235</p>
+                                            <p class="text-sm text-gray-500">Cliente: María González</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-green-600 font-medium">$149.99</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-shopping-cart text-yellow-600"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-900">Pedido #1236</p>
+                                            <p class="text-sm text-gray-500">Cliente: Carlos López</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-green-600 font-medium">$89.99</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Products -->
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold text-gray-900">Productos Más Vendidos</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-image text-gray-400"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-900">Producto 1</p>
+                                            <p class="text-sm text-gray-500">Categoría A</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-blue-600 font-medium">45 ventas</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-image text-gray-400"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-900">Producto 2</p>
+                                            <p class="text-sm text-gray-500">Categoría B</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-blue-600 font-medium">38 ventas</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-image text-gray-400"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <p class="text-sm font-medium text-gray-900">Producto 3</p>
+                                            <p class="text-sm text-gray-500">Categoría C</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-blue-600 font-medium">32 ventas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Acciones Rápidas</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <a href="admin-products.html" class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-center">
+                                <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                                    <i class="fas fa-plus text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Agregar Producto</h4>
+                                    <p class="text-sm text-gray-500">Crear un nuevo producto</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="admin-users.html" class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-center">
+                                <div class="p-3 rounded-full bg-green-100 text-green-600">
+                                    <i class="fas fa-user-plus text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Agregar Usuario</h4>
+                                    <p class="text-sm text-gray-500">Registrar nuevo cliente</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="admin-reports.html" class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition-shadow">
+                            <div class="flex items-center">
+                                <div class="p-3 rounded-full bg-purple-100 text-purple-600">
+                                    <i class="fas fa-chart-line text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Ver Reportes</h4>
+                                    <p class="text-sm text-gray-500">Analizar ventas y datos</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Script para cerrar sesión -->
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Proteger la página para que solo accedan administradores
+            const rolesPermitidos = [Auth.ROLES.ADMIN];
+            Auth.protegerPagina(rolesPermitidos);
+            
+            // Botón de cierre de sesión
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                Auth.cerrarSesion();
+            });
+        });
+    </script>
+</body>
+</html>

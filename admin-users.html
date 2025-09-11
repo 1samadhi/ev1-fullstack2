@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios - Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-gray-800 text-white flex flex-col">
+            <!-- Logo -->
+            <div class="flex items-center p-6 border-b border-gray-700">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-store text-white"></i>
+                </div>
+                <span class="text-xl font-bold">Company</span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="flex-1 p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="admin-dashboard.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-th-large mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-orders.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-clipboard-list mr-3"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-products.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-warehouse mr-3"></i>
+                            Inventory
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-reports.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-employees.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-user mr-3"></i>
+                            Employees
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-users.html" class="flex items-center p-3 rounded-lg bg-blue-600 text-white">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Utility Links -->
+                <div class="border-t border-gray-700 mt-6 pt-4">
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="admin-settings.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                                <i class="fas fa-cog mr-3"></i>
+                                Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a href="admin-profile.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                                <i class="fas fa-user-plus mr-3"></i>
+                                +Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                                <i class="fas fa-search mr-3"></i>
+                                Search
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                                <i class="fas fa-question-circle mr-3"></i>
+                                Help
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Profile Link -->
+                <div class="border-t border-gray-700 mt-4 pt-4">
+                    <a href="admin-profile.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <i class="fas fa-user mr-3"></i>
+                        Profile
+                    </a>
+                    <a href="#" id="logout-btn" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <i class="fas fa-sign-out-alt mr-3"></i>
+                        Cerrar Sesión
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Bar -->
+            <header class="bg-white shadow-sm border-b border-gray-200">
+                <div class="flex items-center justify-between px-6 py-4">
+                    <h1 class="text-2xl font-bold text-gray-900">Usuarios</h1>
+                    <div class="flex items-center space-x-4">
+                        <button onclick="openCreateUserModal()" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+                            NUEVO USUARIO
+                        </button>
+                        <button class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-bell text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-6">Nuevo Usuario</h2>
+                
+                <!-- User Form -->
+                <form id="userForm" class="space-y-4">
+                    <!-- RUN -->
+                    <div>
+                        <label for="run" class="block text-sm font-medium text-gray-700 mb-1">RUN:</label>
+                        <input 
+                            type="text" 
+                            id="run" 
+                            name="run" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                            placeholder="Sin puntos ni guión (Ej: 19011022K)"
+                        >
+                        <div id="run-error" class="text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+                    
+                    <!-- Nombre -->
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre:</label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                            maxlength="50"
+                        >
+                        <div id="nombre-error" class="text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+                    
+                    <!-- Apellidos -->
+                    <div>
+                        <label for="apellidos" class="block text-sm font-medium text-gray-700 mb-1">Apellidos:</label>
+                        <input 
+                            type="text" 
+                            id="apellidos" 
+                            name="apellidos" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                            maxlength="100"
+                        >
+                        <div id="apellidos-error" class="text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+                    
+                    <!-- Correo -->
+                    <div>
+                        <label for="correo" class="block text-sm font-medium text-gray-700 mb-1">Correo:</label>
+                        <input 
+                            type="email" 
+                            id="correo" 
+                            name="correo" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                            maxlength="100"
+                            placeholder="ejemplo@duoc.cl"
+                        >
+                        <div id="correo-error" class="text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+                    
+                    <!-- Fecha Nacimiento -->
+                    <div>
+                        <label for="fechaNacimiento" class="block text-sm font-medium text-gray-700 mb-1">Fecha Nacimiento:</label>
+                        <input 
+                            type="date" 
+                            id="fechaNacimiento" 
+                            name="fechaNacimiento" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                        <div id="fechaNacimiento-error" class="text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+                    
+                    <!-- Tipo de Usuario -->
+                    <div>
+                        <label for="tipoUsuario" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Usuario:</label>
+                        <select 
+                            id="tipoUsuario" 
+                            name="tipoUsuario" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                        >
+                            <option value="">Seleccione un tipo</option>
+                            <option value="admin">Administrador</option>
+                            <option value="vendedor">Vendedor</option>
+                            <option value="cliente">Cliente</option>
+                        </select>
+                        <div id="tipoUsuario-error" class="text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+                    
+                    <!-- Región -->
+                    <div>
+                        <label for="region" class="block text-sm font-medium text-gray-700 mb-1">Región:</label>
+                        <select 
+                            id="region" 
+                            name="region" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                        >
+                            <option value="">Seleccione una región</option>
+                            <!-- Se cargará dinámicamente -->
+                        </select>
+                        <div id="region-error" class="text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+                    
+                    <!-- Comuna -->
+                    <div>
+                        <label for="comuna" class="block text-sm font-medium text-gray-700 mb-1">Comuna:</label>
+                        <select 
+                            id="comuna" 
+                            name="comuna" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                            disabled
+                        >
+                            <option value="">Seleccione una comuna</option>
+                            <!-- Se cargará dinámicamente -->
+                        </select>
+                        <div id="comuna-error" class="text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+                    
+                    <!-- Dirección -->
+                    <div>
+                        <label for="direccion" class="block text-sm font-medium text-gray-700 mb-1">Dirección:</label>
+                        <input 
+                            type="text" 
+                            id="direccion" 
+                            name="direccion" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required
+                            maxlength="300"
+                        >
+                        <div id="direccion-error" class="text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="pt-4">
+                        <button 
+                            type="submit" 
+                            class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                        >
+                            Guardar Usuario
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+    <!-- Script para cerrar sesión -->
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Proteger la página para que solo accedan administradores
+            const rolesPermitidos = [Auth.ROLES.ADMIN];
+            Auth.protegerPagina(rolesPermitidos);
+            
+            // Botón de cierre de sesión
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                Auth.cerrarSesion();
+            });
+        });
+    </script>
+</body>
+</html>
