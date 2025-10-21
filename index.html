@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online - Página Principal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="js/auth.js"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-store text-white text-xl"></i>
+                    </div>
+                    <span class="ml-3 text-2xl font-bold text-gray-800">Tienda Online</span>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-orange-600 font-medium">Home</a>
+                <a href="productos.html" class="text-gray-700 hover:text-orange-600 font-medium">Productos</a>
+                <a href="nosotros.html" class="text-gray-700 hover:text-orange-600 font-medium">Nosotros</a>
+                <a href="blogs.html" class="text-gray-700 hover:text-orange-600 font-medium">Blogs</a>
+                <a href="contacto.html" class="text-gray-700 hover:text-orange-600 font-medium">Contacto</a>
+                </nav>
+
+                <!-- Cart and Auth -->
+                <div class="flex items-center space-x-4">
+                    <!-- Cart -->
+                    <div class="flex items-center text-gray-700 hover:text-orange-600 cursor-pointer">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="ml-2 font-medium">Cart (0)</span>
+                    </div>
+                    
+                    <!-- Auth Links -->
+                    <div class="hidden md:flex items-center space-x-4 text-sm">
+                        <a href="login.html" class="text-gray-700 hover:text-orange-600">Iniciar sesión</a>
+                <span class="mx-2 text-gray-400">|</span>
+                <a href="registro.html" class="text-gray-700 hover:text-orange-600">Registrar usuario</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-orange-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-6">
+                    <h1 class="text-5xl font-bold text-gray-900">TIENDA ONLINE</h1>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        En nuestro servicio de páginas webs puedes adaptar las plantillas al tipo de negocio que desees ¡nosotros lo hacemos por ti!
+                    </p>
+                    <button class="bg-orange-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-orange-700 transition-colors flex items-center">
+                        <i class="fas fa-download mr-2"></i>
+                        Ver productos
+                    </button>
+                </div>
+
+                <!-- Right Image -->
+                <div class="flex justify-center">
+                    <div class="w-full h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden relative flex items-center justify-center">
+                        <svg class="w-80 h-60" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Fondo -->
+                            <rect width="320" height="240" fill="#f8fafc" rx="10"/>
+                            
+                            <!-- Base del laptop -->
+                            <rect x="40" y="160" width="240" height="60" fill="#374151" rx="8"/>
+                            <rect x="45" y="165" width="230" height="50" fill="#4b5563" rx="6"/>
+                            
+                            <!-- Pantalla del laptop -->
+                            <rect x="60" y="40" width="200" height="130" fill="#1f2937" rx="8"/>
+                            <rect x="65" y="45" width="190" height="120" fill="#111827" rx="6"/>
+                            
+                            <!-- Pantalla encendida -->
+                            <rect x="70" y="50" width="180" height="110" fill="#3b82f6" rx="4"/>
+                            
+                            <!-- Interfaz de la tienda en pantalla -->
+                            <rect x="75" y="55" width="170" height="20" fill="#1e40af" rx="2"/>
+                            <text x="160" y="68" text-anchor="middle" fill="white" font-family="Arial" font-size="10" font-weight="bold">TIENDA ONLINE</text>
+                            
+                            <!-- Productos en pantalla -->
+                            <rect x="80" y="85" width="35" height="30" fill="#f97316" rx="2"/>
+                            <rect x="125" y="85" width="35" height="30" fill="#f97316" rx="2"/>
+                            <rect x="170" y="85" width="35" height="30" fill="#f97316" rx="2"/>
+                            <rect x="215" y="85" width="35" height="30" fill="#f97316" rx="2"/>
+                            
+                            <rect x="80" y="125" width="35" height="30" fill="#f97316" rx="2"/>
+                            <rect x="125" y="125" width="35" height="30" fill="#f97316" rx="2"/>
+                            <rect x="170" y="125" width="35" height="30" fill="#f97316" rx="2"/>
+                            <rect x="215" y="125" width="35" height="30" fill="#f97316" rx="2"/>
+                            
+                            <!-- Teclado -->
+                            <rect x="70" y="175" width="180" height="30" fill="#374151" rx="4"/>
+                            
+                            <!-- Teclas del teclado -->
+                            <g fill="#6b7280">
+                                <rect x="75" y="180" width="8" height="6" rx="1"/>
+                                <rect x="87" y="180" width="8" height="6" rx="1"/>
+                                <rect x="99" y="180" width="8" height="6" rx="1"/>
+                                <rect x="111" y="180" width="8" height="6" rx="1"/>
+                                <rect x="123" y="180" width="8" height="6" rx="1"/>
+                                <rect x="135" y="180" width="8" height="6" rx="1"/>
+                                <rect x="147" y="180" width="8" height="6" rx="1"/>
+                                <rect x="159" y="180" width="8" height="6" rx="1"/>
+                                <rect x="171" y="180" width="8" height="6" rx="1"/>
+                                <rect x="183" y="180" width="8" height="6" rx="1"/>
+                                <rect x="195" y="180" width="8" height="6" rx="1"/>
+                                <rect x="207" y="180" width="8" height="6" rx="1"/>
+                                <rect x="219" y="180" width="8" height="6" rx="1"/>
+                                <rect x="231" y="180" width="8" height="6" rx="1"/>
+                                
+                                <rect x="80" y="190" width="8" height="6" rx="1"/>
+                                <rect x="92" y="190" width="8" height="6" rx="1"/>
+                                <rect x="104" y="190" width="8" height="6" rx="1"/>
+                                <rect x="116" y="190" width="8" height="6" rx="1"/>
+                                <rect x="128" y="190" width="8" height="6" rx="1"/>
+                                <rect x="140" y="190" width="8" height="6" rx="1"/>
+                                <rect x="152" y="190" width="8" height="6" rx="1"/>
+                                <rect x="164" y="190" width="8" height="6" rx="1"/>
+                                <rect x="176" y="190" width="8" height="6" rx="1"/>
+                                <rect x="188" y="190" width="8" height="6" rx="1"/>
+                                <rect x="200" y="190" width="8" height="6" rx="1"/>
+                                <rect x="212" y="190" width="8" height="6" rx="1"/>
+                                <rect x="224" y="190" width="8" height="6" rx="1"/>
+                                
+                                <!-- Barra espaciadora -->
+                                <rect x="120" y="198" width="80" height="4" rx="2"/>
+                            </g>
+                            
+                            <!-- Trackpad -->
+                            <rect x="140" y="210" width="40" height="25" fill="#4b5563" rx="4"/>
+                            
+                            <!-- Logo de la marca -->
+                            <circle cx="160" cy="45" r="8" fill="#f97316"/>
+                            <text x="160" y="49" text-anchor="middle" fill="white" font-family="Arial" font-size="8" font-weight="bold">T</text>
+                            
+                            <!-- Sombra -->
+                            <ellipse cx="160" cy="230" rx="100" ry="8" fill="#000000" opacity="0.1"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Nuestros Productos</h2>
+            
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer">Producto 1</h3>
+                        <p class="text-gray-600 text-sm mt-1">Descripción del producto</p>
+                        <p class="text-xl font-bold text-gray-900 mt-2">$29.990</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer">Producto 2</h3>
+                        <p class="text-gray-600 text-sm mt-1">Descripción del producto</p>
+                        <p class="text-xl font-bold text-gray-900 mt-2">$39.990</p>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer">Producto 3</h3>
+                        <p class="text-gray-600 text-sm mt-1">Descripción del producto</p>
+                        <p class="text-xl font-bold text-gray-900 mt-2">$49.990</p>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-orange-600 hover:text-orange-800 cursor-pointer">Producto 4</h3>
+                        <p class="text-gray-600 text-sm mt-1">Descripción del producto</p>
+                        <p class="text-xl font-bold text-gray-900 mt-2">$59.990</p>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer">Producto 5</h3>
+                        <p class="text-gray-600 text-sm mt-1">Descripción del producto</p>
+                        <p class="text-xl font-bold text-gray-900 mt-2">$69.990</p>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer">Producto 6</h3>
+                        <p class="text-gray-600 text-sm mt-1">Descripción del producto</p>
+                        <p class="text-xl font-bold text-gray-900 mt-2">$79.990</p>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer">Producto 7</h3>
+                        <p class="text-gray-600 text-sm mt-1">Descripción del producto</p>
+                        <p class="text-xl font-bold text-gray-900 mt-2">$89.990</p>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-blue-600 hover:text-blue-800 cursor-pointer">Producto 8</h3>
+                        <p class="text-gray-600 text-sm mt-1">Descripción del producto</p>
+                        <p class="text-xl font-bold text-gray-900 mt-2">$99.990</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left Side -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-store text-white text-xl"></i>
+                        </div>
+                        <span class="ml-3 text-2xl font-bold">Tienda Online</span>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-300 hover:text-orange-400">Home</a>
+                        <a href="productos.html" class="block text-gray-300 hover:text-orange-400">Productos</a>
+                        <a href="nosotros.html" class="block text-gray-300 hover:text-orange-400">Nosotros</a>
+                        <a href="blogs.html" class="block text-gray-300 hover:text-orange-400">Blogs</a>
+                        <a href="contacto.html" class="block text-gray-300 hover:text-orange-400">Contacto</a>
+                    </div>
+                    
+                    <!-- Payment Methods -->
+                    <div class="mt-6">
+                        <div class="flex space-x-4">
+                            <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
+                                <span class="text-xs font-bold text-blue-600">VISA</span>
+                            </div>
+                            <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
+                                <span class="text-xs font-bold text-red-600">MC</span>
+                            </div>
+                            <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
+                                <span class="text-xs font-bold text-green-600">AMEX</span>
+                            </div>
+                            <div class="w-12 h-8 bg-gray-300 rounded flex items-center justify-center">
+                                <i class="fas fa-credit-card text-gray-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">¡Mantente en contacto!</h3>
+                    <p class="text-gray-300 mb-4">Únete a nuestro boletín de noticias.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-2">
+                        <input 
+                            type="email" 
+                            placeholder="Ingresa tu email" 
+                            class="flex-1 px-4 py-2 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                        <button 
+                            type="submit" 
+                            class="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors font-medium"
+                        >
+                            Suscribirse
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Bottom Border -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Tienda Online. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation (Hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+        <div class="px-4 py-2 space-y-2">
+            <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+            <a href="productos.html" class="block py-2 text-gray-700 hover:text-blue-600">Productos</a>
+            <a href="nosotros.html" class="block py-2 text-gray-700 hover:text-blue-600">Nosotros</a>
+            <a href="blogs.html" class="block py-2 text-gray-700 hover:text-blue-600">Blogs</a>
+            <a href="contacto.html" class="block py-2 text-gray-700 hover:text-blue-600">Contacto</a>
+            <div class="border-t pt-2">
+                <a href="login.html" class="block py-2 text-gray-700 hover:text-blue-600">Iniciar sesión</a>
+                <a href="registro.html" class="block py-2 text-gray-700 hover:text-blue-600">Registrar usuario</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+<script>
+        // Obtener el usuario actual
+        const usuarioActual = Auth.obtenerUsuarioActual();
+        
+        // Actualizar la interfaz según el estado de autenticación
+        window.addEventListener('DOMContentLoaded', function() {
+            const authLinks = document.querySelector('.md\\:flex.items-center.space-x-4.text-sm');
+            const navLinks = document.querySelector('.hidden.md\\:flex.space-x-8');
+            
+            if (usuarioActual) {
+                // Usuario autenticado
+                authLinks.innerHTML = `
+                    <span class="text-gray-700">Hola, ${usuarioActual.nombre}</span>
+                    <span class="text-gray-300">|</span>
+                    <a href="#" id="btnLogout" class="text-gray-700 hover:text-blue-600">Cerrar sesión</a>
+                `;
+                
+                // Agregar evento de cierre de sesión
+                document.getElementById('btnLogout').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    Auth.cerrarSesion();
+                });
+                
+                // Mostrar enlaces según el rol
+                if (usuarioActual.rol === Auth.ROLES.ADMIN) {
+                    // Administrador: mostrar enlaces administrativos
+                    navLinks.innerHTML += `
+                        <a href="admin-dashboard.html" class="text-gray-700 hover:text-blue-600 font-medium">Dashboard</a>
+                        <a href="admin-products.html" class="text-gray-700 hover:text-blue-600 font-medium">Gestión Productos</a>
+                        <a href="admin-users.html" class="text-gray-700 hover:text-blue-600 font-medium">Gestión Usuarios</a>
+                    `;
+                } else if (usuarioActual.rol === Auth.ROLES.VENDEDOR) {
+                    // Vendedor: mostrar enlaces de vendedor
+                    navLinks.innerHTML += `
+                        <a href="admin-products.html" class="text-gray-700 hover:text-blue-600 font-medium">Gestión Productos</a>
+                    `;
+                }
+            }
+        });
+    </script>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos - Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin-styles.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-orange-800 text-white flex flex-col">
+            <!-- Logo -->
+            <div class="flex items-center p-6 border-b border-gray-700">
+                <div class="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-store text-white"></i>
+                </div>
+                <span class="text-xl font-bold">Company</span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="flex-1 p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="admin-dashboard.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-orange-700 hover:text-white">
+                            <i class="fas fa-th-large mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-orders.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-clipboard-list mr-3"></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-products.html" class="flex items-center p-3 rounded-lg bg-orange-600 text-white">
+                            <i class="fas fa-warehouse mr-3"></i>
+                            Inventory
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-reports.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Reports
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-employees.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                            <i class="fas fa-user mr-3"></i>
+                            Employees
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin-users.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-orange-700 hover:text-white">
+                            <i class="fas fa-users mr-3"></i>
+                            Customers
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Utility Links -->
+                <div class="border-t border-gray-700 mt-6 pt-4">
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="admin-settings.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-orange-700 hover:text-white">
+                                <i class="fas fa-cog mr-3"></i>
+                                Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a href="admin-profile.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-orange-700 hover:text-white">
+                                <i class="fas fa-user-plus mr-3"></i>
+                                +Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-orange-700 hover:text-white">
+                                <i class="fas fa-search mr-3"></i>
+                                Search
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-gray-700 hover:text-white">
+                                <i class="fas fa-question-circle mr-3"></i>
+                                Help
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Profile Link -->
+                <div class="border-t border-gray-700 mt-4 pt-4">
+                    <a href="admin-profile.html" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-orange-700 hover:text-white">
+                        <i class="fas fa-user mr-3"></i>
+                        Profile
+                    </a>
+                    <a href="#" id="logout-btn" class="flex items-center p-3 rounded-lg text-gray-300 hover:bg-orange-700 hover:text-white">
+                        <i class="fas fa-sign-out-alt mr-3"></i>
+                        Cerrar Sesión
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Bar -->
+            <header class="bg-white shadow-sm border-b border-gray-200">
+                <div class="flex items-center justify-between px-6 py-4">
+                    <h1 class="text-2xl font-bold text-gray-900">Productos</h1>
+                    <div class="flex items-center space-x-4">
+                        <button onclick="openCreateProductModal()" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+                            NUEVO PRODUCTO
+                        </button>
+                        <button class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-bell text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
+                <!-- Search and Filter Bar -->
+                <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
+                        <div class="flex-1 max-w-lg">
+                            <div class="relative">
+                                <input type="text" id="searchInput" placeholder="Buscar productos..." 
+                                       class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <select id="categoryFilter" class="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                <option value="">Todas las categorías</option>
+                                <option value="electronica">Electrónica</option>
+                                <option value="ropa">Ropa</option>
+                                <option value="hogar">Hogar</option>
+                                <option value="deportes">Deportes</option>
+                                <option value="juguetes">Juguetes</option>
+                                <option value="libros">Libros</option>
+                            </select>
+                            <select id="statusFilter" class="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                <option value="">Todos los estados</option>
+                                <option value="active">Activos</option>
+                                <option value="inactive">Inactivos</option>
+                                <option value="low-stock">Stock bajo</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- Products Table -->
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable('id')">
+                                        <div class="flex items-center">
+                                            <span>ID</span>
+                                            <i class="fas fa-sort ml-2"></i>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        <div class="flex items-center">
+                                            <span>Imagen</span>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable('name')">
+                                        <div class="flex items-center">
+                                            <span>Nombre</span>
+                                            <i class="fas fa-sort ml-2"></i>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable('price')">
+                                        <div class="flex items-center">
+                                            <span>Precio</span>
+                                            <i class="fas fa-sort ml-2"></i>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable('stock')">
+                                        <div class="flex items-center">
+                                            <span>Stock</span>
+                                            <i class="fas fa-sort ml-2"></i>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable('category')">
+                                        <div class="flex items-center">
+                                            <span>Categoría</span>
+                                            <i class="fas fa-sort ml-2"></i>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100" onclick="sortTable('active')">
+                                        <div class="flex items-center">
+                                            <span>Estado</span>
+                                            <i class="fas fa-sort ml-2"></i>
+                                        </div>
+                                    </th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Acciones
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsTableBody" class="bg-white divide-y divide-gray-200">
+                                <!-- Products will be loaded here via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+                        <div class="flex-1 flex justify-between sm:hidden">
+                            <button id="prevPageMobile" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                Anterior
+                            </button>
+                            <button id="nextPageMobile" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                Siguiente
+                            </button>
+                        </div>
+                        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                            <div>
+                                <p class="text-sm text-gray-700">
+                                    Mostrando <span id="showingFrom" class="font-medium">1</span> a <span id="showingTo" class="font-medium">10</span> de <span id="totalProducts" class="font-medium">0</span> resultados
+                                </p>
+                            </div>
+                            <div>
+                                <nav id="pagination" class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                                    <!-- Pagination buttons will be generated here -->
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Create/Edit Product Modal -->
+    <div id="productModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden z-50">
+        <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-1/2 shadow-lg rounded-md bg-white">
+            <div class="mt-3">
+                <!-- Modal Header -->
+                <div class="bg-gray-800 text-white p-4 rounded-t-lg">
+                    <h3 id="modalTitle" class="text-lg font-bold">NUEVO PRODUCTO</h3>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="p-6">
+                    <form id="modalProductForm" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="productCode" class="block text-sm font-medium text-gray-700 mb-1">CÓDIGO PRODUCTO *</label>
+                                <input type="text" id="productCode" name="productCode" required minlength="3" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                            <div>
+                                <label for="productName" class="block text-sm font-medium text-gray-700 mb-1">NOMBRE DEL PRODUCTO *</label>
+                                <input type="text" id="productName" name="productName" required maxlength="100" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="productPrice" class="block text-sm font-medium text-gray-700 mb-1">PRECIO *</label>
+                                <input type="number" id="productPrice" name="productPrice" step="0.01" min="0" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                            <div>
+                                <label for="productStock" class="block text-sm font-medium text-gray-700 mb-1">STOCK *</label>
+                                <input type="number" id="productStock" name="productStock" min="0" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="productCategory" class="block text-sm font-medium text-gray-700 mb-1">CATEGORÍA *</label>
+                                <select id="productCategory" name="productCategory" required class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                    <option value="">Seleccionar categoría</option>
+                                    <option value="electronica">Electrónica</option>
+                                    <option value="ropa">Ropa</option>
+                                    <option value="hogar">Hogar</option>
+                                    <option value="deportes">Deportes</option>
+                                    <option value="juguetes">Juguetes</option>
+                                    <option value="libros">Libros</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="productCriticalStock" class="block text-sm font-medium text-gray-700 mb-1">STOCK CRÍTICO</label>
+                                <input type="number" id="productCriticalStock" name="productCriticalStock" min="0" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="productDescription" class="block text-sm font-medium text-gray-700 mb-1">DESCRIPCIÓN *</label>
+                            <textarea id="productDescription" name="productDescription" rows="3" required maxlength="500" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
+                        </div>
+
+                        <div>
+                            <label for="productImage" class="block text-sm font-medium text-gray-700 mb-1">IMAGEN</label>
+                            <input type="file" id="productImage" name="productImage" accept="image/*" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        </div>
+
+                        <div class="flex items-center">
+                            <input type="checkbox" id="productActive" name="productActive" class="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded">
+                            <label for="productActive" class="ml-2 block text-sm text-gray-700">
+                                Producto activo
+                            </label>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-3">
+                    <button onclick="closeProductModal()" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition-colors">
+                        Cancelar
+                    </button>
+                    <button onclick="saveProduct()" class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Products data
+        let products = JSON.parse(localStorage.getItem('adminProducts')) || [
+            {
+                id: 1,
+                code: 'PROD001',
+                name: "Producto 1",
+                price: 29.99,
+                stock: 50,
+                criticalStock: 5,
+                category: "electronica",
+                description: "Descripción del producto 1",
+                active: true,
+                image: null,
+                createdAt: new Date('2024-01-15')
+            },
+            {
+                id: 2,
+                code: 'PROD002',
+                name: "Producto 2",
+                price: 39.99,
+                stock: 25,
+                criticalStock: 3,
+                category: "ropa",
+                description: "Descripción del producto 2",
+                active: true,
+                image: null,
+                createdAt: new Date('2024-01-20')
+            },
+            {
+                id: 3,
+                code: 'PROD003',
+                name: "Producto 3",
+                price: 49.99,
+                stock: 2,
+                criticalStock: 5,
+                category: "hogar",
+                description: "Descripción del producto 3",
+                active: false,
+                image: null,
+                createdAt: new Date('2024-01-25')
+            }
+        ];
+
+        let editingProductId = null;
+        let currentPage = 1;
+        const itemsPerPage = 10;
+        let currentSort = { field: 'name', direction: 'asc' };
+        let currentFilters = { category: '', status: '', search: '' };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProducts();
+            
+            // Event listeners para filtros
+            document.getElementById('searchInput').addEventListener('input', applyFilters);
+            document.getElementById('categoryFilter').addEventListener('change', applyFilters);
+            document.getElementById('statusFilter').addEventListener('change', applyFilters);
+        });
+
+        // Load products into table
+        function loadProducts() {
+            const filteredProducts = filterProducts();
+            const sortedProducts = sortProducts(filteredProducts);
+            const paginatedProducts = paginateProducts(sortedProducts);
+            
+            const tbody = document.getElementById('productsTableBody');
+            tbody.innerHTML = '';
+
+            paginatedProducts.forEach(product => {
+                const statusClass = product.active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
+                const statusText = product.active ? 'Activo' : 'Inactivo';
+                const stockClass = product.stock <= product.criticalStock ? 'text-red-600 font-bold' : '';
+                
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-gray-50';
+                row.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${product.id}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <img src="https://picsum.photos/40/40?random=${product.id}" alt="Producto" class="w-10 h-10 rounded-lg object-cover">
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="text-sm font-medium text-gray-900">${product.name}</div>
+                        <div class="text-sm text-gray-500">${product.code}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$${product.price.toFixed(2)}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm ${stockClass}">${product.stock}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 capitalize">${product.category}</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${statusClass}">
+                            ${statusText}
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button onclick="editProduct(${product.id})" class="text-blue-600 hover:text-blue-900 mr-3">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button onclick="deleteProduct(${product.id})" class="text-red-600 hover:text-red-900">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            updatePagination(filteredProducts.length);
+            updateProductStats();
+        }
+
+        // Función para filtrar productos
+        function filterProducts() {
+            return products.filter(product => {
+                const matchesSearch = !currentFilters.search || 
+                    product.name.toLowerCase().includes(currentFilters.search.toLowerCase()) ||
+                    product.code.toLowerCase().includes(currentFilters.search.toLowerCase());
+                
+                const matchesCategory = !currentFilters.category || product.category === currentFilters.category;
+                
+                const matchesStatus = !currentFilters.status || 
+                    (currentFilters.status === 'active' && product.active) ||
+                    (currentFilters.status === 'inactive' && !product.active) ||
+                    (currentFilters.status === 'low-stock' && product.stock <= product.criticalStock);
+
+                return matchesSearch && matchesCategory && matchesStatus;
+            });
+        }
+
+        // Función para ordenar productos
+        function sortProducts(products) {
+            return [...products].sort((a, b) => {
+                let aValue = a[currentSort.field];
+                let bValue = b[currentSort.field];
+
+                if (typeof aValue === 'string') {
+                    aValue = aValue.toLowerCase();
+                    bValue = bValue.toLowerCase();
+                }
+
+                if (currentSort.direction === 'asc') {
+                    return aValue > bValue ? 1 : -1;
+                } else {
+                    return aValue < bValue ? 1 : -1;
+                }
+            });
+        }
+
+        // Función para paginar productos
+        function paginateProducts(products) {
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            return products.slice(startIndex, startIndex + itemsPerPage);
+        }
+
+        // Función para actualizar paginación
+        function updatePagination(totalItems) {
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            const pagination = document.getElementById('pagination');
+            
+            if (pagination) {
+                pagination.innerHTML = `
+                    <button onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''} 
+                            class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50 ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''}">
+                        Anterior
+                    </button>
+                    <span class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border-t border-b border-gray-300">
+                        Página ${currentPage} de ${totalPages}
+                    </span>
+                    <button onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''} 
+                            class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-md hover:bg-gray-50 ${currentPage === totalPages ? 'cursor-not-allowed opacity-50' : ''}">
+                        Siguiente
+                    </button>
+                `;
+            }
+            
+            // Update showing info
+            const showingFrom = (currentPage - 1) * itemsPerPage + 1;
+            const showingTo = Math.min(currentPage * itemsPerPage, totalItems);
+            
+            const showingFromEl = document.getElementById('showingFrom');
+            const showingToEl = document.getElementById('showingTo');
+            const totalProductsEl = document.getElementById('totalProducts');
+            
+            if (showingFromEl) showingFromEl.textContent = showingFrom;
+            if (showingToEl) showingToEl.textContent = showingTo;
+            if (totalProductsEl) totalProductsEl.textContent = totalItems;
+        }
+
+        // Función para cambiar página
+        function changePage(page) {
+            const totalPages = Math.ceil(filterProducts().length / itemsPerPage);
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                loadProducts();
+            }
+        }
+
+        // Función para actualizar estadísticas
+        function updateProductStats() {
+            const totalProducts = products.length;
+            const activeProducts = products.filter(p => p.active).length;
+            const lowStockProducts = products.filter(p => p.stock <= p.criticalStock).length;
+            
+            // Actualizar contadores si existen en el DOM
+            const totalElement = document.getElementById('totalProducts');
+            const activeElement = document.getElementById('activeProducts');
+            const lowStockElement = document.getElementById('lowStockProducts');
+            
+            if (totalElement) totalElement.textContent = totalProducts;
+            if (activeElement) activeElement.textContent = activeProducts;
+            if (lowStockElement) lowStockElement.textContent = lowStockProducts;
+        }
+
+        // Función para ordenar tabla
+        function sortTable(field) {
+            if (currentSort.field === field) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.field = field;
+                currentSort.direction = 'asc';
+            }
+            loadProducts();
+        }
+
+        // Función para aplicar filtros
+        function applyFilters() {
+            currentFilters.search = document.getElementById('searchInput').value;
+            currentFilters.category = document.getElementById('categoryFilter').value;
+            currentFilters.status = document.getElementById('statusFilter').value;
+            currentPage = 1;
+            loadProducts();
+        }
+
+        // Open create product modal
+        function openCreateProductModal() {
+            editingProductId = null;
+            document.getElementById('modalTitle').textContent = 'NUEVO PRODUCTO';
+            document.getElementById('modalProductForm').reset();
+            document.getElementById('productActive').checked = true;
+            document.getElementById('productModal').classList.remove('hidden');
+        }
+
+        // Close product modal
+        function closeProductModal() {
+            document.getElementById('productModal').classList.add('hidden');
+        }
+
+        // Edit product
+        function editProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            editingProductId = id;
+            document.getElementById('modalTitle').textContent = 'EDITAR PRODUCTO';
+            document.getElementById('productCode').value = product.code || '';
+            document.getElementById('productName').value = product.name;
+            document.getElementById('productPrice').value = product.price;
+            document.getElementById('productStock').value = product.stock;
+            document.getElementById('productCriticalStock').value = product.criticalStock || '';
+            document.getElementById('productCategory').value = product.category;
+            document.getElementById('productDescription').value = product.description;
+            document.getElementById('productActive').checked = product.active;
+            document.getElementById('productModal').classList.remove('hidden');
+        }
+
+        // Save product
+        function saveProduct() {
+            const form = document.getElementById('modalProductForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const formData = new FormData(form);
+
+            const productData = {
+                code: formData.get('productCode'),
+                name: formData.get('productName'),
+                price: parseFloat(formData.get('productPrice')),
+                stock: parseInt(formData.get('productStock')),
+                criticalStock: parseInt(formData.get('productCriticalStock')) || 0,
+                category: formData.get('productCategory'),
+                description: formData.get('productDescription'),
+                active: formData.get('productActive') === 'on',
+                image: formData.get('productImage')
+            };
+
+            // Validation
+            if (!productData.name || !productData.price || !productData.stock || !productData.category || !productData.description) {
+                alert('Por favor, complete todos los campos requeridos');
+                return;
+            }
+
+            // Validar código único
+            const existingProduct = products.find(p => p.code === productData.code && p.id !== editingProductId);
+            if (existingProduct) {
+                alert('Ya existe un producto con este código');
+                return;
+            }
+
+            if (editingProductId) {
+                // Update existing product
+                const index = products.findIndex(p => p.id === editingProductId);
+                if (index !== -1) {
+                    products[index] = { ...products[index], ...productData };
+                }
+            } else {
+                // Create new product
+                const newId = Math.max(...products.map(p => p.id), 0) + 1;
+                products.push({ 
+                    id: newId, 
+                    ...productData,
+                    createdAt: new Date()
+                });
+            }
+
+            // Save to localStorage
+            localStorage.setItem('adminProducts', JSON.stringify(products));
+
+            // Reload table and close modal
+            loadProducts();
+            closeProductModal();
+
+            // Show success message
+            alert('Producto guardado exitosamente');
+        }
+
+        // Delete product
+        function deleteProduct(id) {
+            if (confirm('¿Está seguro de que desea eliminar este producto?')) {
+                products = products.filter(p => p.id !== id);
+                localStorage.setItem('adminProducts', JSON.stringify(products));
+                loadProducts();
+                alert('Producto eliminado exitosamente');
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('productModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProductModal();
+            }
+        });
+    </script>
+</body>
+</html>
+
+    <!-- Script para cerrar sesión -->
+    <script src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Proteger la página para que solo accedan administradores y vendedores
+            const rolesPermitidos = [Auth.ROLES.ADMIN, Auth.ROLES.VENDEDOR];
+            Auth.protegerPagina(rolesPermitidos);
+            
+            // Botón de cierre de sesión
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                Auth.cerrarSesion();
+            });
+        });
+    </script>
+</body>
+</html>

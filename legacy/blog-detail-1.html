@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASO CURIOSO #1 - Tienda Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-store text-white text-xl"></i>
+                    </div>
+                    <span class="ml-3 text-2xl font-bold text-gray-800">Tienda Online</span>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                    <a href="productos.html" class="text-gray-700 hover:text-blue-600 font-medium">Productos</a>
+                    <a href="nosotros.html" class="text-gray-700 hover:text-blue-600 font-medium">Nosotros</a>
+                    <a href="blogs.html" class="text-blue-600 font-medium">Blogs</a>
+                    <a href="contacto.html" class="text-gray-700 hover:text-blue-600 font-medium">Contacto</a>
+                </nav>
+
+                <!-- Cart and Auth -->
+                <div class="flex items-center space-x-4">
+                    <!-- Cart -->
+                    <div class="flex items-center text-gray-700 hover:text-blue-600 cursor-pointer">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="ml-2 font-medium">Cart (0)</span>
+                    </div>
+                    
+                    <!-- Auth Links -->
+                    <div class="hidden md:flex items-center space-x-4 text-sm">
+                        <a href="login.html" class="text-gray-700 hover:text-blue-600">Iniciar sesión</a>
+                        <span class="text-gray-300">|</span>
+                        <a href="registro.html" class="text-gray-700 hover:text-blue-600">Registrar usuario</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb -->
+            <nav class="mb-8">
+                <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                    <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
+                    <li><i class="fas fa-chevron-right text-xs"></i></li>
+                    <li><a href="blogs.html" class="hover:text-blue-600">Blogs</a></li>
+                    <li><i class="fas fa-chevron-right text-xs"></i></li>
+                    <li class="text-gray-900">CASO CURIOSO #1</li>
+                </ol>
+            </nav>
+
+            <!-- Article Header -->
+            <header class="mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">CASO CURIOSO #1</h1>
+                <div class="flex items-center text-gray-600 mb-6">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    <span class="mr-6">15 de Enero, 2024</span>
+                    <i class="fas fa-user mr-2"></i>
+                    <span class="mr-6">Equipo Editorial</span>
+                    <i class="fas fa-clock mr-2"></i>
+                    <span>5 min de lectura</span>
+                </div>
+            </header>
+
+            <!-- Featured Image -->
+            <div class="mb-12">
+                <img src="https://picsum.photos/800/400?random=31" alt="Imagen del caso curioso" class="w-full h-96 rounded-lg object-cover">
+            </div>
+
+            <!-- Article Content -->
+            <article class="prose prose-lg max-w-none">
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">El Fascinante Mundo de las Guías de Campo</h2>
+                    
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Nuestras guías de campo de América del Norte proporcionan consejos para identificar aves en todas las regiones de Estados Unidos y Canadá. ¡Descarga cualquiera de nuestras guías gratis ahora! Esta iniciativa nació de una pasión compartida por la naturaleza y el deseo de hacer accesible el conocimiento ornitológico a todos los amantes de la vida silvestre.
+                    </p>
+
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        <strong>La Historia Detrás del Proyecto:</strong> Todo comenzó en 2019 cuando nuestro equipo de biólogos y desarrolladores se unió para crear una plataforma digital que revolucionara la forma en que las personas interactúan con la naturaleza. Después de meses de investigación y desarrollo, lanzamos nuestra primera guía digital que cubría las aves de la región del Pacífico Noroeste.
+                    </p>
+
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 mt-8">Características Únicas de Nuestras Guías</h3>
+                    
+                    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                        <li><strong>Identificación por características visuales:</strong> Cada ave incluye múltiples fotografías de alta calidad que muestran diferentes ángulos, plumajes estacionales y variaciones de edad.</li>
+                        <li><strong>Sonidos y cantos:</strong> Incluimos grabaciones de audio de alta fidelidad para cada especie, facilitando la identificación auditiva.</li>
+                        <li><strong>Mapas de distribución interactivos:</strong> Visualiza dónde encontrar cada especie en diferentes épocas del año.</li>
+                        <li><strong>Información ecológica detallada:</strong> Hábitats preferidos, comportamiento, alimentación y patrones migratorios.</li>
+                        <li><strong>Modo offline:</strong> Descarga las guías para usarlas sin conexión a internet en el campo.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 mt-8">Impacto en la Comunidad</h3>
+                    
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Desde su lanzamiento, nuestras guías han sido descargadas más de 500,000 veces por usuarios en todo el continente. Hemos recibido testimonios increíbles de educadores, investigadores, fotógrafos de naturaleza y familias que han descubierto una nueva pasión por la observación de aves.
+                    </p>
+
+                    <blockquote class="border-l-4 border-blue-600 pl-6 py-4 bg-blue-50 rounded-r-lg mb-6">
+                        <p class="text-gray-700 italic text-lg">
+                            "Estas guías han transformado completamente mi experiencia de observación de aves. La calidad de las imágenes y la información detallada me han ayudado a identificar especies que antes me resultaban imposibles de distinguir."
+                        </p>
+                        <footer class="mt-2 text-gray-600">
+                            <cite>— Dr. Sarah Johnson, Ornitóloga</cite>
+                        </footer>
+                    </blockquote>
+
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 mt-8">Tecnología de Vanguardia</h3>
+                    
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Utilizamos inteligencia artificial y machine learning para mejorar continuamente nuestras guías. Nuestro sistema de reconocimiento de imágenes puede identificar aves a partir de fotografías subidas por los usuarios, proporcionando sugerencias instantáneas y ayudando a expandir nuestra base de datos.
+                    </p>
+
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 mt-8">Compromiso con la Conservación</h3>
+                    
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Una parte de los ingresos generados por nuestras guías premium se destina directamente a proyectos de conservación de aves en América del Norte. Hasta la fecha, hemos contribuido con más de $50,000 a organizaciones como la National Audubon Society y BirdLife International.
+                    </p>
+
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                        <h4 class="text-lg font-bold text-green-800 mb-2">Dato Curioso</h4>
+                        <p class="text-green-700">
+                            ¿Sabías que el colibrí rufo puede volar a velocidades de hasta 50 km/h y es la única ave que puede volar hacia atrás? Esta y otras fascinantes curiosidades están incluidas en nuestras guías especiales.
+                        </p>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 mt-8">Futuro del Proyecto</h3>
+                    
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Estamos trabajando en la expansión de nuestras guías para incluir mamíferos, reptiles, anfibios y plantas nativas de América del Norte. También estamos desarrollando una aplicación de realidad aumentada que permitirá identificar especies en tiempo real usando la cámara del teléfono.
+                    </p>
+
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                        <h4 class="text-lg font-bold text-blue-800 mb-2">¿Quieres Contribuir?</h4>
+                        <p class="text-blue-700 mb-4">
+                            Si eres fotógrafo de naturaleza, ornitólogo o simplemente un amante de las aves, puedes contribuir a nuestro proyecto enviando tus fotografías y observaciones.
+                        </p>
+                        <a href="contacto.html" class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                            Contáctanos
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Related Articles -->
+            <section class="mt-16">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8">Artículos Relacionados</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="https://picsum.photos/400/200?random=37" alt="CASO CURIOSO #2" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">CASO CURIOSO #2</h3>
+                            <p class="text-gray-600 text-sm mb-4">Descubre los secretos detrás de nuestros productos más populares...</p>
+                            <a href="blog-detail-2.html" class="text-blue-600 hover:text-blue-800 font-medium">Leer más →</a>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <img src="https://picsum.photos/400/200?random=38" alt="Tendencias de Compra 2024" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Tendencias de Compra 2024</h3>
+                            <p class="text-gray-600 text-sm mb-4">Analizamos los patrones de compra más interesantes de este año...</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">Leer más →</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left Side -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-store text-white text-xl"></i>
+                        </div>
+                        <span class="ml-3 text-2xl font-bold">Tienda Online</span>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría X</a>
+                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría Y</a>
+                        <a href="#" class="block text-blue-400 hover:text-blue-300">Categoría Z</a>
+                    </div>
+                    
+                    <!-- Payment Methods -->
+                    <div class="mt-6">
+                        <div class="flex space-x-4">
+                            <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
+                                <span class="text-xs font-bold text-blue-600">VISA</span>
+                            </div>
+                            <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
+                                <span class="text-xs font-bold text-red-600">MC</span>
+                            </div>
+                            <div class="w-12 h-8 bg-white rounded flex items-center justify-center">
+                                <span class="text-xs font-bold text-green-600">AMEX</span>
+                            </div>
+                            <div class="w-12 h-8 bg-gray-300 rounded flex items-center justify-center">
+                                <i class="fas fa-credit-card text-gray-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Newsletter -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">¡Mantente en contacto!</h3>
+                    <p class="text-gray-300 mb-4">Únete a nuestro boletín de noticias.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-2">
+                        <input 
+                            type="email" 
+                            placeholder="Ingresa tu email" 
+                            class="flex-1 px-4 py-2 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                        <button 
+                            type="submit" 
+                            class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                        >
+                            Suscribirse
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Bottom Border -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Tienda Online. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation (Hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+        <div class="px-4 py-2 space-y-2">
+            <a href="index.html" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+            <a href="productos.html" class="block py-2 text-gray-700 hover:text-blue-600">Productos</a>
+            <a href="nosotros.html" class="block py-2 text-gray-700 hover:text-blue-600">Nosotros</a>
+            <a href="blogs.html" class="block py-2 text-blue-600 font-medium">Blogs</a>
+            <a href="contacto.html" class="block py-2 text-gray-700 hover:text-blue-600">Contacto</a>
+            <div class="border-t pt-2">
+                <a href="login.html" class="block py-2 text-gray-700 hover:text-blue-600">Iniciar sesión</a>
+                <a href="registro.html" class="block py-2 text-gray-700 hover:text-blue-600">Registrar usuario</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
