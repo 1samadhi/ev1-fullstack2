@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
-  <path d="M90 90 L120 70 L180 70 L210 90 L190 120 L190 230 L110 230 L110 120 Z" fill="#2563eb" stroke="#1e40af" stroke-width="6"/>
-  <rect x="135" y="140" width="30" height="30" fill="#ffffff" opacity="0.6"/>
-  <text x="150" y="270" text-anchor="middle" font-size="18" fill="#374151" font-family="Arial">Camiseta</text>
-</svg>
