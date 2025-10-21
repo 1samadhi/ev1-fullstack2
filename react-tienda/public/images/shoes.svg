@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <path d="M40 190 C80 160, 120 200, 200 200 L260 200 C270 210, 270 220, 260 230 L60 230 C50 230, 40 220, 40 210 Z" fill="#1f2937" stroke="#374151" stroke-width="6"/>
+  <rect x="90" y="175" width="60" height="10" rx="4" fill="#9ca3af"/>
+  <text x="150" y="270" text-anchor="middle" font-size="18" fill="#374151" font-family="Arial">Zapatillas</text>
+</svg>
